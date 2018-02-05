@@ -5,18 +5,20 @@ var library = [
   { title: "The Mythical Man-Month", year: "1975", author: "Fred Brooks", publisher: "Addison-Wesley" },
   { title: "The Pragmatic Programmer", year: "1999", author: "Andy Hunt and Dave Thomas", publisher: "The Pragmatic Bookshelf	" }
   /* Task 2 */
+
 ];
 
 /* Task 1 */
 function getBookTitle( index ){
-  //add code
+  return library[index].title;
 }
 
 console.log(getBookTitle(3));
 
 /* Task 3 */
 function addBook( book ){
-  //add code
+  library.push(book);
+  return library;
 }
 
 var newBook = {};
@@ -25,6 +27,14 @@ console.log(addBook(newBook));
 /* Task 4 */
 function bookByAuthor(){
   //add code
+  
+var sortedArray = library.sort(function (a, b) {
+      if (a < b) return -1;
+      else if (a > b) return 1;
+      return 0;
+    });
+return sortedArray;
+
 }
 
 console.log(bookByAuthor());
