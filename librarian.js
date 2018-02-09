@@ -29,8 +29,8 @@ function bookByAuthor(){
   //add code
   
 var sortedArray = library.sort(function (a, b) {
-      if (a < b) return -1;
-      else if (a > b) return 1;
+      if (a.author < b.author) return -1;
+      else if (a.author > b.author) return 1;
       return 0;
     });
 return sortedArray;
@@ -42,6 +42,20 @@ console.log(bookByAuthor());
 /* Task 5 */
 function findByTitle( title ){
   //add code
+    for (var i = 0; i < bookByAuthor.length; i++) {
+
+  if(bookByAuthor[i].title==title)
+  {
+      return bookByAuthor[i];
+
+      break;
+  }
+  else {
+    console.log("Not found");
+  }
+
+
+}
 }
 
 console.log(findByTitle("man"));
